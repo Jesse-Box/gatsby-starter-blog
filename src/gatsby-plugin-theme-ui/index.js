@@ -72,7 +72,7 @@ export default {
       textRendering: "optimizelegibility",
     },
     h1: {
-      color: "background",
+      color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -109,7 +109,7 @@ export default {
       padding: 2,
     },
     h5: {
-      color: "background",
+      color: "text",
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
@@ -144,11 +144,11 @@ export default {
       borderRadius: 0,
 
       ":active": {
-        boxShadow: (theme) => `0 0 0 2px ${theme.colors.accent}`,
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
       },
 
       ":focus": {
-        boxShadow: (theme) => `0 0 0 2px ${theme.colors.accent}`,
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
       },
     },
     pre: {
@@ -229,11 +229,11 @@ export default {
       borderRadius: 0,
 
       ":active": {
-        boxShadow: (theme) => `0 0 0 2px ${theme.colors.accent}`,
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
       },
 
       ":focus": {
-        boxShadow: (theme) => `0 0 0 2px ${theme.colors.accent}`,
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
       },
     },
     nav: {
@@ -253,12 +253,12 @@ export default {
 
       ":active": {
         color: "primary.dark",
-        boxShadow: (theme) => `0 0 0 2px ${theme.colors.accent}`,
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
       },
 
       ":focus": {
-        boxShadow: (theme) => `0 0 0 2px ${theme.colors.accent}`,
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
       },
     },
   },
-};
+}

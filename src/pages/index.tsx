@@ -1,11 +1,11 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import { PageProps, Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 type Data = {
   site: {
@@ -43,19 +43,15 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <Styled.h3 style={{}}>
+                <Styled.a as={Link} to={node.fields.slug}>
                   {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
+                </Styled.a>
+              </Styled.h3>
+              <Styled.h6>{node.frontmatter.date}</Styled.h6>
             </header>
             <section>
-              <p
+              <Styled.p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
