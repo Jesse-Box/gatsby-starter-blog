@@ -27,7 +27,7 @@ export default {
 
   fontWeights: {
     body: 400,
-    heading: 800,
+    heading: 700,
   },
 
   lineHeights: {
@@ -137,11 +137,15 @@ export default {
     },
     a: {
       color: "primary.base",
-      textDecoration: "underline",
+      textDecoration: "none",
       margin: 0,
       transition: "all 80ms ease-in",
       outline: "none",
       borderRadius: 0,
+
+      ":hover": {
+        textDecoration: "underline",
+      },
 
       ":active": {
         boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,

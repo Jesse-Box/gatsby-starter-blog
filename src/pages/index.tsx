@@ -1,6 +1,5 @@
-// Gatsby supports TypeScript natively!
-/** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import React from "react"
+import { Styled } from "theme-ui"
 import { PageProps, Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -43,7 +42,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <Styled.h3 style={{}}>
+              <Styled.h3>
                 <Styled.a as={Link} to={node.fields.slug}>
                   {title}
                 </Styled.a>

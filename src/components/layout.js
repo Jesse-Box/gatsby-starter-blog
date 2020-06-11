@@ -25,7 +25,7 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div>
+    <Styled.root>
       <Global
         styles={css`
           @font-face {
@@ -33,7 +33,6 @@ const Layout = ({ location, title, children }) => {
             src: url("fonts/Unica77LLWeb-Regular.woff2") format("woff2"),
               url("fonts/Unica77LLWeb-Regular.woff") format("woff");
           }
-
           @font-face {
             font-family: "Unica77LLWeb-Bold";
             src: url("fonts/Unica77LLWeb-Bold.woff2") format("woff2"),
@@ -48,7 +47,7 @@ const Layout = ({ location, title, children }) => {
         {` `}
         <Styled.a href="https://www.gatsbyjs.org">Gatsby</Styled.a>
       </footer>
-    </div>
+    </Styled.root>
   )
 }
 
