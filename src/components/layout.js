@@ -1,37 +1,17 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { Link } from "gatsby"
+import { jsx, Styled, Container } from "theme-ui"
+
+import Navigation from "./navigation"
+import Footer from "./footer"
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
-
-  if (location.pathname === rootPath) {
-    header = (
-      <Styled.h1>
-        <Styled.a as={Link} to={`/`}>
-          {title}
-        </Styled.a>
-      </Styled.h1>
-    )
-  } else {
-    header = (
-      <Styled.h3>
-        <Styled.a as={Link} to={`/`}>
-          {title}
-        </Styled.a>
-      </Styled.h3>
-    )
-  }
   return (
     <Styled.root>
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <Styled.a href="https://www.gatsbyjs.org">Gatsby</Styled.a>
-      </footer>
+      <Navigation>{title}</Navigation>
+      <Container px={3} py={5} sx={{ maxWidth: [0, 1] }}>
+        <main>{children}</main>
+      </Container>
+      <Footer />
     </Styled.root>
   )
 }

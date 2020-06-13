@@ -3,7 +3,7 @@ export default {
 
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 
-  sizes: [656, 1260],
+  sizes: [540, 656, 1260],
 
   radii: [2, 8, 16, 32],
 
@@ -27,7 +27,7 @@ export default {
 
   fontWeights: {
     body: 400,
-    heading: 700,
+    heading: 600,
   },
 
   lineHeights: {
@@ -141,7 +141,7 @@ export default {
       margin: 0,
       transition: "all 80ms ease-in",
       outline: "none",
-      borderRadius: 0,
+      borderRadius: 1,
 
       ":hover": {
         textDecoration: "underline",
@@ -199,6 +199,24 @@ export default {
         bg: "primary.dark",
       },
     },
+    naked: {
+      bg: "background",
+      outline: "none",
+      color: "primary.base",
+
+      ":hover": {
+        bg: "muted",
+      },
+
+      ":active": {
+        color: "primary.dark",
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
+      },
+
+      ":focus": {
+        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
+      },
+    },
   },
 
   borderWidths: [2, 4],
@@ -224,44 +242,10 @@ export default {
   },
 
   link: {
-    horizon: {
-      color: "background",
-      textDecoration: "underline",
-      margin: 0,
-      transition: "all 80ms ease-in",
-      outline: "none",
-      borderRadius: 0,
-
-      ":active": {
-        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
-      },
-
-      ":focus": {
-        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
-      },
-    },
     nav: {
-      color: "primary.base",
-      fontWeight: "body",
-      py: 1,
-      px: 2,
-      display: "flex",
-      borderRadius: 3,
-      outline: "none",
-      textDecoration: "none",
-      transition: "all 80ms ease-in",
-
       ":hover": {
         bg: "muted",
-      },
-
-      ":active": {
-        color: "primary.dark",
-        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
-      },
-
-      ":focus": {
-        boxShadow: theme => `0 0 0 2px ${theme.colors.accent}`,
+        textDecoration: "none",
       },
     },
   },
