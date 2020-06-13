@@ -9,7 +9,7 @@ const Layout = ({ location, title, children }) => {
     <Styled.root>
       <Navigation>{title}</Navigation>
       <Container px={3} py={5} sx={{ maxWidth: [0, 1] }}>
-        <main>{children}</main>
+        <main sx={{ paddingX: 2 }}>{children}</main>
       </Container>
       <Footer />
     </Styled.root>

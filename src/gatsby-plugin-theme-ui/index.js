@@ -78,8 +78,7 @@ export default {
       fontWeight: "heading",
       fontSize: 6,
       margin: 0,
-      padding: 2,
-      letterSpacing: "-0.8px",
+      letterSpacing: "-0.64px",
     },
     h2: {
       color: "text",
@@ -88,7 +87,6 @@ export default {
       fontWeight: "heading",
       fontSize: 5,
       margin: 0,
-      padding: 2,
     },
     h3: {
       color: "text",
@@ -97,7 +95,6 @@ export default {
       fontWeight: "heading",
       fontSize: 4,
       margin: 0,
-      padding: 2,
     },
     h4: {
       color: "text",
@@ -106,25 +103,22 @@ export default {
       fontWeight: "heading",
       fontSize: 3,
       margin: 0,
-      padding: 2,
     },
     h5: {
-      color: "text",
-      fontFamily: "body",
-      lineHeight: "body",
-      fontWeight: "body",
-      fontSize: 2,
-      margin: 0,
-      padding: 2,
-    },
-    h6: {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
+      fontSize: 2,
+      margin: 0,
+    },
+    h6: {
+      color: "secondary",
+      fontFamily: "body",
+      lineHeight: "body",
+      fontWeight: "body",
       fontSize: 0,
       margin: 0,
-      padding: 2,
     },
     p: {
       color: "text",
@@ -133,7 +127,6 @@ export default {
       lineHeight: "body",
       fontSize: 1,
       margin: 0,
-      padding: 2,
     },
     a: {
       color: "primary.base",
@@ -183,6 +176,13 @@ export default {
     },
     img: {
       maxWidth: "100%",
+    },
+    blockquote: {
+      margin: 0,
+      paddingX: 3,
+      borderLeftStyle: "solid",
+      borderLeftColor: "primary.base",
+      borderLeftWidth: 0,
     },
   },
 
