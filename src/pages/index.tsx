@@ -1,5 +1,5 @@
-import React from "react"
-import { Styled } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import { PageProps, Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
