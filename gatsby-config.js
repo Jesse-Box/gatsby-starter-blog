@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Jesse Box`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jesse Box`,
+      summary: `Senior product designer currently at EyeEm, formally at Hubrick & Dailymotion.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `Senior product designer currently at EyeEm, formally at Hubrick & Dailymotion.`,
+    siteUrl: `https://www.jessebox.net`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `@JesseThomasBox`,
     },
   },
   plugins: [
