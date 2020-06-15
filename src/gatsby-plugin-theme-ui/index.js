@@ -1,5 +1,3 @@
-import dracula from "@theme-ui/prism/presets/dracula.json"
-
 export default {
   breakpoints: ["40em", "56em", "64em"],
 
@@ -48,7 +46,6 @@ export default {
     accent: "#47A6FF",
     secondary: "#ADB9C2",
     muted: "#292929",
-    gray: "#999",
     modes: {
       light: {
         text: "#1A1F23",
@@ -61,7 +58,6 @@ export default {
         accent: "#CF1726",
         secondary: "#5F7181",
         muted: "#E7EBEE",
-        gray: "#999",
       },
     },
   },
@@ -169,16 +165,19 @@ export default {
     },
     pre: {
       fontFamily: "monospace",
+      borderRadius: 2,
       fontSize: 1,
       my: 2,
       p: 3,
+      bg: "muted",
       overflow: "auto",
       code: {
-        ...dracula,
+        color: "inherit",
       },
     },
     code: {
-      ...dracula,
+      fontFamily: "monospace",
+      fontSize: 1,
     },
     table: {
       width: "100%",
