@@ -1,3 +1,5 @@
+import dracula from "@theme-ui/prism/presets/dracula.json"
+
 export default {
   breakpoints: ["40em", "56em", "64em"],
 
@@ -46,6 +48,7 @@ export default {
     accent: "#47A6FF",
     secondary: "#ADB9C2",
     muted: "#292929",
+    gray: "#999",
     modes: {
       light: {
         text: "#1A1F23",
@@ -58,6 +61,7 @@ export default {
         accent: "#CF1726",
         secondary: "#5F7181",
         muted: "#E7EBEE",
+        gray: "#999",
       },
     },
   },
@@ -78,6 +82,8 @@ export default {
       fontWeight: "heading",
       fontSize: 6,
       margin: 0,
+      paddingTop: 5,
+      paddingBottom: 3,
       letterSpacing: "-0.64px",
     },
     h2: {
@@ -87,6 +93,8 @@ export default {
       fontWeight: "heading",
       fontSize: 5,
       margin: 0,
+      paddingTop: 3,
+      paddingBottom: 2,
     },
     h3: {
       color: "text",
@@ -95,6 +103,8 @@ export default {
       fontWeight: "heading",
       fontSize: 4,
       margin: 0,
+      paddingTop: 3,
+      paddingBottom: 1,
     },
     h4: {
       color: "text",
@@ -103,6 +113,8 @@ export default {
       fontWeight: "heading",
       fontSize: 3,
       margin: 0,
+      paddingTop: 2,
+      paddingBottom: 0,
     },
     h5: {
       color: "text",
@@ -111,7 +123,10 @@ export default {
       fontWeight: "heading",
       fontSize: 2,
       margin: 0,
+      paddingTop: 2,
+      paddingBottom: 0,
     },
+
     h6: {
       color: "secondary",
       fontFamily: "body",
@@ -119,6 +134,8 @@ export default {
       fontWeight: "body",
       fontSize: 0,
       margin: 0,
+      paddingTop: 1,
+      paddingBottom: 0,
     },
     p: {
       color: "text",
@@ -127,6 +144,8 @@ export default {
       lineHeight: "body",
       fontSize: 1,
       margin: 0,
+      paddingTop: 2,
+      paddingBottom: 2,
     },
     a: {
       color: "primary.base",
@@ -150,29 +169,48 @@ export default {
     },
     pre: {
       fontFamily: "monospace",
-      overflowX: "auto",
+      fontSize: 1,
+      my: 2,
+      p: 3,
+      overflow: "auto",
       code: {
-        color: "inherit",
+        ...dracula,
       },
-      margin: 0,
     },
     code: {
-      fontFamily: "monospace",
-      fontSize: "inherit",
-      margin: 0,
+      ...dracula,
     },
     table: {
       width: "100%",
       borderCollapse: "separate",
       borderSpacing: 0,
+      fontSize: 1,
+      lineHeight: "body",
+      fontFamily: "body",
+      fontWeight: "body",
+      paddingTop: 2,
+      paddingBottom: 2,
     },
     th: {
+      paddingX: 3,
       textAlign: "left",
+      fontSize: "inherit",
+      fontWeight: "inherit",
+      borderTopStyle: "solid",
       borderBottomStyle: "solid",
+      borderBottomWidth: 0,
+      borderTopWidth: 0,
+      borderTopColor: "muted",
+      borderBottomColor: "muted",
+      borderColor: "muted",
     },
     td: {
+      paddingX: 3,
       textAlign: "left",
       borderBottomStyle: "solid",
+      borderBottomWidth: 0,
+      borderBottomColor: "muted",
+      color: "secondary",
     },
     img: {
       maxWidth: "100%",
@@ -183,6 +221,9 @@ export default {
       borderLeftStyle: "solid",
       borderLeftColor: "primary.base",
       borderLeftWidth: 0,
+      p: {
+        color: "secondary",
+      },
     },
   },
 
