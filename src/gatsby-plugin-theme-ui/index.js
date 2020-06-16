@@ -78,8 +78,8 @@ export default {
       fontWeight: "heading",
       fontSize: 6,
       margin: 0,
-      paddingTop: 5,
-      paddingBottom: 3,
+      paddingTop: 2,
+      paddingBottom: 2,
       letterSpacing: "-0.64px",
     },
     h2: {
@@ -215,7 +215,8 @@ export default {
       maxWidth: "100%",
     },
     blockquote: {
-      margin: 0,
+      marginY: 2,
+      marginX: 0,
       paddingX: 3,
       borderLeftStyle: "solid",
       borderLeftColor: "primary.base",

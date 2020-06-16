@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Box } from "theme-ui"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -19,42 +19,73 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-        <header>
+        <header sx={{ py: 3 }}>
           <Styled.h1>{post.frontmatter.title}</Styled.h1>
-          <Styled.p>{post.frontmatter.date}</Styled.p>
+          <Styled.h6>{post.frontmatter.date}</Styled.h6>
         </header>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <hr />
-        <footer>
+        <footer sx={{ py: 2 }}>
           <Bio />
         </footer>
       </article>
 
       <nav>
-        <Styled.ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <Styled.li>
-            {previous && (
-              <Styled.a as={Link} to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Styled.a>
-            )}
-          </Styled.li>
-          <Styled.li>
-            {next && (
-              <Styled.a as={Link} to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Styled.a>
-            )}
-          </Styled.li>
-        </Styled.ul>
+        <Box py={2}>
+          <Styled.ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+              margin: 0,
+            }}
+          >
+            <Styled.li sx={{ width: "50%" }}>
+              {previous && (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "nowrap",
+                    flexFlow: "column",
+                  }}
+                >
+                  <Styled.h6>Previous</Styled.h6>
+                  <Styled.a as={Link} to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Styled.a>
+                </Box>
+              )}
+            </Styled.li>
+            <Styled.li
+              sx={{
+                width: "50%",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {next && (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "nowrap",
+                    flexFlow: "column",
+                  }}
+                >
+                  <Styled.h6 sx={{ textAlign: "right" }}>Next</Styled.h6>
+                  <Styled.a
+                    sx={{ textAlign: "right" }}
+                    as={Link}
+                    to={next.fields.slug}
+                    rel="next"
+                  >
+                    {next.frontmatter.title} →
+                  </Styled.a>
+                </Box>
+              )}
+            </Styled.li>
+          </Styled.ul>
+        </Box>
       </nav>
     </Layout>
   )
