@@ -3,7 +3,7 @@ module.exports = {
     title: `Jesse Box`,
     author: {
       name: `Jesse Box`,
-      summary: `Senior product designer currently at EyeEm, formally at Hubrick & Dailymotion.`,
+      summary: `senior product designer currently at EyeEm, formally at Hubrick & Dailymotion.`,
     },
     description: `Senior product designer currently at EyeEm, formally at Hubrick & Dailymotion.`,
     siteUrl: `https://www.jessebox.net`,
@@ -34,7 +34,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 640,
+              wrapperStyle: `border-radius: 16px`,
             },
           },
           {
@@ -43,7 +44,6 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

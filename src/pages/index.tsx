@@ -46,7 +46,6 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   {title}
                 </Styled.a>
               </Styled.h3>
-              <Styled.h6>{node.frontmatter.date}</Styled.h6>
             </header>
             <section>
               <Styled.p
@@ -54,6 +53,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
+              <Styled.h6>{node.frontmatter.date}</Styled.h6>
             </section>
           </article>
         )
