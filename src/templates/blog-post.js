@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled, Box } from "theme-ui"
 import { Link, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -10,6 +11,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
+  const featuredImageFluid =
+    post.frontmatter.featuredImage.childImageSharp.fluid
   const { previous, next } = pageContext
 
   return (
@@ -22,6 +25,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <header sx={{ py: 3 }}>
           <Styled.h1>{post.frontmatter.title}</Styled.h1>
           <Styled.h6>{post.frontmatter.date}</Styled.h6>
+          <Image fluid={featuredImageFluid}></Image>
         </header>
         <MDXRenderer>{post.body}</MDXRenderer>
         <footer sx={{ py: 2 }}>
@@ -108,6 +112,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
