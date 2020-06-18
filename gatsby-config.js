@@ -3,12 +3,13 @@ module.exports = {
     title: `Jesse Box`,
     author: {
       name: `Jesse Box`,
-      summary: `senior product designer currently at EyeEm, formally at Hubrick & Dailymotion.`,
+      summary: `Senior product designer at EyeEm, formally at Hubrick & Dailymotion.`,
     },
-    description: `Senior product designer currently at EyeEm, formally at Hubrick & Dailymotion.`,
+    description: `Senior product designer at EyeEm, formally at Hubrick & Dailymotion.`,
     siteUrl: `https://www.jessebox.net`,
     social: {
       twitter: `@JesseThomasBox`,
+      linkedin: `jesse-box-835346b7`,
     },
   },
   plugins: [

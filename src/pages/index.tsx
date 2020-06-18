@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Container } from "theme-ui"
 import { PageProps, Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 
@@ -44,26 +44,43 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
-            <header>
-              <Styled.h3>
-                <Styled.a as={Link} to={node.fields.slug}>
-                  {title}
-                </Styled.a>
-              </Styled.h3>
-            </header>
-            <section>
-              <Styled.p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-              <Styled.h6>{node.frontmatter.date}</Styled.h6>
-              <Image
-                fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-              />
-            </section>
-          </article>
+          <Container>
+            <article
+              key={node.fields.slug}
+              sx={{
+                p: [3, 4, 4],
+                borderStyle: "solid",
+                borderWidth: 0,
+                borderColor: "muted",
+                borderRadius: 2,
+              }}
+            >
+              <header>
+                <Styled.h3>
+                  <Styled.a as={Link} to={node.fields.slug}>
+                    {title}
+                  </Styled.a>
+                </Styled.h3>
+              </header>
+              <section>
+                <Styled.p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+                <Styled.h6>{node.frontmatter.date}</Styled.h6>
+                <Container pt={3} pb={4}>
+                  <Container sx={{ borderRadius: 2, overflow: "hidden" }}>
+                    <Image
+                      fluid={
+                        node.frontmatter.featuredImage.childImageSharp.fluid
+                      }
+                    />
+                  </Container>
+                </Container>
+              </section>
+            </article>
+          </Container>
         )
       })}
     </Layout>

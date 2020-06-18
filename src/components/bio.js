@@ -6,8 +6,8 @@
  */
 
 /** @jsx jsx */
-import { jsx, Styled, Box } from "theme-ui"
-import { useStaticQuery, graphql } from "gatsby"
+import { jsx, Styled, Container, Box } from "theme-ui"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 
 const Bio = () => {
@@ -28,6 +28,7 @@ const Bio = () => {
           }
           social {
             twitter
+            linkedin
           }
         }
       }
@@ -36,35 +37,55 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <Box py={2}>
+    <Container
+      p={3}
+      sx={{
+        borderStyle: "solid",
+        borderWidth: 0,
+        borderColor: "muted",
+        borderRadius: 2,
+      }}
+    >
       <Box
         p={2}
-        sx={{
-          bg: "muted",
-          borderRadius: 2,
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-        }}
+        sx={{ display: "flex", flexWrap: "wrap", alignItems: "center" }}
       >
-        <Box p={2} sx={{ display: "flex", flex: "0 0 76px", minWidth: 76 }}>
+        <Container
+          p={2}
+          sx={{ display: "flex", flex: "0 0 76px", minWidth: 76 }}
+        >
           <Image
             fixed={data.avatar.childImageSharp.fixed}
             alt={author.name}
             sx={{ minWidth: 60, borderRadius: 1 }}
           />
-        </Box>
-        <Box p={2} sx={{ flex: "1 1 300px" }}>
+        </Container>
+        <Container p={2} sx={{ flex: "1 1 300px" }}>
           <Styled.p sx={{ p: 0 }}>
-            I am a {author.summary}
-            {` `}
-            <Styled.a href={`https://twitter.com/${social.twitter}`}>
-              Find me on Twitter →
+            {author.summary}
+            {` `} Find me on {` `}
+            <Styled.a
+              as={Link}
+              title="Twitter Profile"
+              href={`https://twitter.com/${social.twitter}`}
+            >
+              Twitter
             </Styled.a>
+            {` `}
+            or
+            {` `}
+            <Styled.a
+              as={Link}
+              title="LinkedIn Profile"
+              href={`https://linkedin.com/${social.linkedin}`}
+            >
+              LinkedIn
+            </Styled.a>
+            .
           </Styled.p>
-        </Box>
+        </Container>
       </Box>
-    </Box>
+    </Container>
   )
 }
 

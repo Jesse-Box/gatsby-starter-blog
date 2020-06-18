@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Container } from "theme-ui"
+import { jsx, Container } from "theme-ui"
 import LinkNav from "./link-nav"
 
 const Footer = () => {
@@ -7,12 +7,13 @@ const Footer = () => {
     <footer
       sx={{
         backgroundColor: "background",
-        width: "100%",
-        paddingBottom: 5,
+        borderTopColor: "muted",
+        borderTopStyle: "solid",
+        borderTopWidth: 0,
       }}
     >
-      <Container sx={{ maxWidth: [0, 1] }}>
-        <Flex sx={{ alignItems: "center", padding: 2 }}>
+      <Container px={[2]} py={2} sx={{ maxWidth: [0, 1, 2] }}>
+        <Container px={[0, 3]} sx={{ display: "flex", alignItems: "center" }}>
           <LinkNav title="Twitter" href="https://twitter.com/JesseThomasBox">
             Twitter
           </LinkNav>
@@ -22,7 +23,7 @@ const Footer = () => {
           >
             LinkedIn
           </LinkNav>
-        </Flex>
+        </Container>
       </Container>
     </footer>
   )
