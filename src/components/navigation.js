@@ -22,9 +22,6 @@ const Navigation = props => {
         borderBottomColor: "muted",
         borderBottomStyle: "solid",
         borderBottomWidth: 0,
-        position: "fixed",
-        width: "100%",
-        zIndex: "1",
       }}
     >
       <Container px={[2]} py={2} sx={{ maxWidth: [0, 1, 2] }}>

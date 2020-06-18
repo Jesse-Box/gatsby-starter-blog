@@ -100,7 +100,7 @@ export default {
       fontSize: 4,
       margin: 0,
       paddingTop: 3,
-      paddingBottom: 1,
+      paddingBottom: 0,
     },
     h4: {
       color: "text",
@@ -130,8 +130,6 @@ export default {
       fontWeight: "body",
       fontSize: 0,
       margin: 0,
-      paddingTop: 1,
-      paddingBottom: 0,
     },
     p: {
       color: "text",

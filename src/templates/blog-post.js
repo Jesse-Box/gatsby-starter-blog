@@ -3,7 +3,6 @@ import { jsx, Styled, Box, Container } from "theme-ui"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -37,9 +36,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <Image fluid={featuredImageFluid}></Image>
           </header>
           <MDXRenderer>{post.body}</MDXRenderer>
-          <footer sx={{ py: 2 }}>
-            <Bio />
-          </footer>
         </Container>
       </article>
 
