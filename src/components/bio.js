@@ -6,7 +6,7 @@
  */
 
 /** @jsx jsx */
-import { jsx, Styled, Container } from "theme-ui"
+import { jsx, Styled, Container, Box } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 
@@ -46,7 +46,7 @@ const Bio = () => {
         borderRadius: 2,
       }}
     >
-      <Container
+      <Box
         p={2}
         sx={{ display: "flex", flexWrap: "wrap", alignItems: "center" }}
       >
@@ -84,7 +84,7 @@ const Bio = () => {
             .
           </Styled.p>
         </Container>
-      </Container>
+      </Box>
     </Container>
   )
 }
