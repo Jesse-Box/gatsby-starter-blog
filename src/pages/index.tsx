@@ -20,6 +20,11 @@ type Data = {
           title: string
           date: string
           description: string
+          featuredImage: {
+            childImageSharp: {
+              fluid: FluidObject
+            }
+          }
         }
         fields: {
           slug: string
