@@ -40,7 +40,9 @@ const Bio = () => {
       <Box
         p={2}
         sx={{
-          bg: "muted",
+          borderStyle: "solid",
+          borderWidth: 0,
+          borderColor: "muted",
           borderRadius: 2,
           display: "flex",
           flexWrap: "wrap",

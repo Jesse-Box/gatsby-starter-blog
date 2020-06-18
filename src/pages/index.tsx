@@ -44,7 +44,16 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
+          <article
+            key={node.fields.slug}
+            sx={{
+              p: [3, 4, 4],
+              borderStyle: "solid",
+              borderWidth: 0,
+              borderColor: "muted",
+              borderRadius: 2,
+            }}
+          >
             <header>
               <Styled.h3>
                 <Styled.a as={Link} to={node.fields.slug}>

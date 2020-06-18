@@ -24,26 +24,28 @@ const Navigation = props => {
         borderBottomWidth: 0,
         position: "fixed",
         width: "100%",
+        zIndex: "1",
       }}
     >
-      <Container
-        p={2}
-        sx={{
-          display: "flex",
-          justifyContent: "spaceBetween",
-          alignItems: "center",
-          maxWidth: [0, 1],
-        }}
-      >
-        <LinkNav
-          sx={{ variant: "link.nav" }}
-          title="Home"
-          to="/"
-          activeClassName="active"
+      <Container px={[2]} py={2} sx={{ maxWidth: [0, 1, 2] }}>
+        <Container
+          px={[0, 3]}
+          sx={{
+            display: "flex",
+            justifyContent: "spaceBetween",
+            alignItems: "center",
+          }}
         >
-          {data.site.siteMetadata.title}
-        </LinkNav>
-        <ThemeToggle />
+          <LinkNav
+            sx={{ variant: "link.nav" }}
+            title="Home"
+            to="/"
+            activeClassName="active"
+          >
+            {data.site.siteMetadata.title}
+          </LinkNav>
+          <ThemeToggle />
+        </Container>
       </Container>
     </nav>
   )

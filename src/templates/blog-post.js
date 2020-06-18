@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Box } from "theme-ui"
+import { jsx, Styled, Box, Container } from "theme-ui"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 
@@ -22,15 +22,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-        <header sx={{ py: 3 }}>
-          <Styled.h1>{post.frontmatter.title}</Styled.h1>
-          <Styled.h6>{post.frontmatter.date}</Styled.h6>
-          <Image fluid={featuredImageFluid}></Image>
-        </header>
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <footer sx={{ py: 2 }}>
-          <Bio />
-        </footer>
+        <Container
+          sx={{
+            p: [3, 4, 4],
+            borderStyle: "solid",
+            borderWidth: 0,
+            borderColor: "background",
+            borderRadius: 2,
+          }}
+        >
+          <header sx={{ py: 3 }}>
+            <Styled.h1>{post.frontmatter.title}</Styled.h1>
+            <Styled.h6>{post.frontmatter.date}</Styled.h6>
+            <Image fluid={featuredImageFluid}></Image>
+          </header>
+          <MDXRenderer>{post.body}</MDXRenderer>
+          <footer sx={{ py: 2 }}>
+            <Bio />
+          </footer>
+        </Container>
       </article>
 
       <nav>
@@ -109,6 +119,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       body
       frontmatter {
+        tags
         title
         date(formatString: "MMMM DD, YYYY")
         description
