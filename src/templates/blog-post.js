@@ -13,6 +13,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const featuredImageFluid =
     post.frontmatter.featuredImage.childImageSharp.fluid
   const { previous, next } = pageContext
+  const tags = post.frontmatter.tags
+
+  const listTags = tags.map(tag => (
+    <Styled.li key={tag.toString} sx={{ display: "inline" }}>
+      <Styled.h6 sx={{ display: "inline", pr: 3 }}>{tag}</Styled.h6>
+    </Styled.li>
+  ))
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -30,10 +37,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             borderRadius: 2,
           }}
         >
-          <header sx={{ py: 3 }}>
-            <Styled.h1>{post.frontmatter.title}</Styled.h1>
-            <Styled.h6>{post.frontmatter.date}</Styled.h6>
-            <Image fluid={featuredImageFluid}></Image>
+          <header>
+            <Box pt={2}>
+              <Styled.ul sx={{ listStyleType: "none", p: 0, m: 0 }}>
+                {listTags}
+              </Styled.ul>
+              <Styled.h1>{post.frontmatter.title}</Styled.h1>
+              <Styled.h6 sx={{ py: 1 }}>{post.frontmatter.date}</Styled.h6>
+              <Box py={3}>
+                <Image fluid={featuredImageFluid}></Image>
+              </Box>
+            </Box>
           </header>
           <MDXRenderer>{post.body}</MDXRenderer>
         </Container>
