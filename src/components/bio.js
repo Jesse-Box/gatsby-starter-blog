@@ -50,16 +50,13 @@ const Bio = () => {
         p={2}
         sx={{ display: "flex", flexWrap: "wrap", alignItems: "center" }}
       >
-        <Container
-          p={2}
-          sx={{ display: "flex", flex: "0 0 76px", minWidth: 76 }}
-        >
+        <Box p={2} sx={{ display: "flex", flex: "0 0 76px", minWidth: 76 }}>
           <Image
             fixed={data.avatar.childImageSharp.fixed}
             alt={author.name}
             sx={{ minWidth: 60, borderRadius: 1 }}
           />
-        </Container>
+        </Box>
         <Container p={2} sx={{ flex: "1 1 300px" }}>
           <Styled.p sx={{ p: 0 }}>
             {author.summary}
