@@ -97,7 +97,14 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                 />
                 <Styled.h6>{node.frontmatter.date}</Styled.h6>
                 <Container pt={3} pb={3}>
-                  <Container sx={{ borderRadius: 2, overflow: "hidden" }}>
+                  <Container
+                    sx={{
+                      borderRadius: 2,
+                      borderStyle: "solid",
+                      borderWidth: 0,
+                      borderColor: "muted",
+                    }}
+                  >
                     <Image
                       fluid={
                         node.frontmatter.featuredImage.childImageSharp.fluid

@@ -27,6 +27,7 @@ module.exports = {
         name: `assets`,
       },
     },
+    `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
