@@ -5,6 +5,7 @@ import Image from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { MdxEmbedProvider } from "@pauliescanlon/gatsby-mdx-embed"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -45,11 +46,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <Styled.h1>{post.frontmatter.title}</Styled.h1>
               <Styled.h6 sx={{ py: 1 }}>{post.frontmatter.date}</Styled.h6>
               <Box py={3}>
-                <Image fluid={featuredImageFluid}></Image>
+                <Box
+                  sx={{
+                    borderRadius: 2,
+                    borderStyle: "solid",
+                    borderWidth: 0,
+                    borderColor: "muted",
+                  }}
+                >
+                  <Image fluid={featuredImageFluid}></Image>
+                </Box>
               </Box>
             </Box>
           </header>
-          <MDXRenderer>{post.body}</MDXRenderer>
+          <MdxEmbedProvider>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </MdxEmbedProvider>
         </Container>
       </article>
 
