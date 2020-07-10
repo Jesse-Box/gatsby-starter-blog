@@ -7,7 +7,7 @@
 
 /** @jsx jsx */
 import { jsx, Styled, Container, Box } from "theme-ui"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 const Bio = () => {
