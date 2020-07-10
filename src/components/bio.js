@@ -38,7 +38,7 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <Container
-      p={3}
+      p={[2, 3, 3]}
       sx={{
         borderStyle: "solid",
         borderWidth: 0,
@@ -47,7 +47,7 @@ const Bio = () => {
       }}
     >
       <Box
-        p={2}
+        p={[0, 2, 2]}
         sx={{ display: "flex", flexWrap: "wrap", alignItems: "center" }}
       >
         <Box p={2} sx={{ display: "flex", flex: "0 0 76px", minWidth: 76 }}>
