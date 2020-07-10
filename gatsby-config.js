@@ -8,7 +8,7 @@ module.exports = {
     description: `Senior product designer at EyeEm, formally at Hubrick & Dailymotion.`,
     siteUrl: `https://www.jessebox.net`,
     social: {
-      twitter: `@JesseThomasBox`,
+      twitter: `JesseThomasBox`,
       linkedin: `jesse-box-835346b7`,
     },
   },

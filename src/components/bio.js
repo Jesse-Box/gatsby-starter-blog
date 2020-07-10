@@ -62,7 +62,6 @@ const Bio = () => {
             {author.summary}
             {` `} Find me on {` `}
             <Styled.a
-              as={Link}
               title="Twitter Profile"
               href={`https://twitter.com/${social.twitter}`}
             >
@@ -72,9 +71,8 @@ const Bio = () => {
             or
             {` `}
             <Styled.a
-              as={Link}
               title="LinkedIn Profile"
-              href={`https://linkedin.com/${social.linkedin}`}
+              href={`https://linkedin.com/in/${social.linkedin}`}
             >
               LinkedIn
             </Styled.a>
